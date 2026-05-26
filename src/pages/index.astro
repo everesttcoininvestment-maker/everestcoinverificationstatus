@@ -39,26 +39,15 @@
              data-sitekey="0x4AAAAAADWv8_JeTGh-_cvF"
              data-callback="verificationSuccess">
         </div>
-
-      <div id="message" style="display:none; margin-top:20px;">
+<div id="message" style="display:none; margin-top:20px;">
     <h2>✅ Verification Complete</h2>
     <p>Thank you! You’ve been successfully verified.</p>
 </div>
-    <script>
-window.onload = function () {
 
-    const widget = document.querySelector(".cf-turnstile");
-
-    window.verificationSuccess = function () {
-
-        const msg = document.getElementById("message");
-
-        msg.style.display = "block";
-
-    };
-
-};
+<script>
+function verificationSuccess() {
+    document.getElementById("message").style.display = "block";
+}
 </script>
-
 </body>
 </html>
