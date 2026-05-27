@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verification Page</title>
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <style>
-    body{
-      font-family:Arial;
-      background:#f5f5f5;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    .box{
-      background:white;
-      padding:40px;
-      border-radius:10px;
-      text-align:center;
-      width:450px;
-      box-shadow:0 0 15px rgba(0,0,0,0.1);
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 420px;
     }
 
-    .message{
-      margin-top:20px;
-      padding:15px;
-      border-radius:8px;
-      background:#f0fff4;
-      border:1px solid #28a745;
+    #message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f0fff4;
+      border: 1px solid #28a745;
     }
   </style>
 </head>
+
 <body>
 
 <div class="box">
@@ -45,19 +50,22 @@
     data-callback="verificationSuccess">
   </div>
 
-  <div id="message" style="display:none; margin-top:20px;">
-    <h2>Verification Completed</h2>
+  <div id="message">
+    <h2>Verification Complete</h2>
     <p>You’ve been successfully verified.</p>
   </div>
 
 </div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
 <script>
-function verificationSuccess(token) {
-  document.getElementById("message").style.display = "block";
-}
+window.verificationSuccess = function () {
+  const msg = document.getElementById("message");
+
+  if (msg) {
+    msg.style.display = "block";
+  }
+};
 </script>
 
 </body>
+</html>
